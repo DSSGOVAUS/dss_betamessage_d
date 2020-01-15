@@ -1,0 +1,54 @@
+.betamessage {
+	background-color: #111;
+	box-shadow: 0 0 6px #000;
+	color: #fff;
+	display: none;
+	font-size: .9em;
+	margin: 0;
+	padding: 10px 20px;
+	position: relative;
+	text-align: center;
+	z-index: 999;
+}
+.betamessage .betamessage-text {
+	margin: 0 80px;
+}
+.betamessage a,
+.betamessage a:link,
+.betamessage a:visited {
+	color: #fff;
+}
+.betamessage a:hover,
+.betamessage a:focus {
+	color: #f05900;
+}
+.betamessage .betamessage-close {
+	float: right;
+	padding-right: 10px;
+}
+.betamessage-tag {
+	background-color: #d74100;
+	color: #fff;
+	font-weight: bold;
+	padding: 4px 7px;
+	text-transform: uppercase;
+	z-index: 998;
+}
+a.betamessage-open {
+	color: #fff !important;
+	left: 0;
+	position: absolute;
+	text-decoration: none !important;
+	top: 0;
+}
+a.betamessage-open:hover,
+a.betamessage-open:focus {
+	text-decoration: underline !important;
+}
+@media screen and (max-width: 780px) {
+  .betamessage .betamessage-close {
+		display: block;
+		float: none;
+		text-align: right;
+  }
+}

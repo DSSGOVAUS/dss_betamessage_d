@@ -1,0 +1,14 @@
+<?php
+function dss_betamessage_page_top(array &$page_top) {
+  //Get Config vals
+  $config = \Drupal::config('dss_betamessage.credentials');
+  $attachto = $config->get('attach_to');
+  $messagewords = $config->get('messagewords');
+  // Add the library and the #markup into page_top
+  $page_top['dss_betamessage'] = [
+    '#attached' => [
+        'library' => ['dss_betamessage/dss-betamessage']
+      ],
+    '#markup' => '<p class="betamessage" data-attach-to="' . $attachto . '"><span class="betamessage-text"><span class="betamessage-tag">Beta</span> &nbsp;' . $messagewords . '</span> <span class="betamessage-close"><a href="#" aria-label="Hide this beta message">Hide this</a></span></p>',
+  ];
+}

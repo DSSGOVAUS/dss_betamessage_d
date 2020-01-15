@@ -1,0 +1,6 @@
+dss_betamessage.settings:
+  path: 'admin/config/user-interface/dss-betamessage'
+  defaults:
+    _form: '\Drupal\dss_betamessage\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

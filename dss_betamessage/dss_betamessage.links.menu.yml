@@ -1,0 +1,6 @@
+dss_betamessage.settings:
+  title: 'DSS Beta Message'
+  description: 'Configuration for the DSS Beta Message module'
+  parent: system.admin_config_ui
+  route_name: dss_betamessage.settings
+  weight: 100

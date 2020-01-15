@@ -1,0 +1,6 @@
+dss-betamessage:
+  js:
+    js/betamessage.js: {}
+  css:
+    theme:
+      css/betamessage.css: {}
