@@ -1,9 +1,10 @@
 jQuery(function($) {
 	$(document).ready(function() {
 		var wrapper_element = $('.betamessage').data('attach-to');
-
+		var theme = drupalSettings.dss_betamessage.theme;
+		var tag = drupalSettings.dss_betamessage.tag;
 		$(wrapper_element).css('position', 'relative');
-		$(wrapper_element).append('<a href="#" class="betamessage-tag betamessage-open" aria-label="Display beta message">Beta</a>');
+		$(wrapper_element).append('<a href="#" class="betamessage-tag betamessage-'+tag+' betamessage-open" aria-label="Display '+tag+' message">'+tag+'</a>');
 
 		if((typeof(Storage)!=='undefined') && (localStorage.getItem('betamessage') != 'closed')) {
 			// Show the message

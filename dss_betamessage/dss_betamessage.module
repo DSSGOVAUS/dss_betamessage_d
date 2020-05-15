@@ -4,11 +4,22 @@ function dss_betamessage_page_top(array &$page_top) {
   $config = \Drupal::config('dss_betamessage.credentials');
   $attachto = $config->get('attach_to');
   $messagewords = $config->get('messagewords');
+  $theme = $config->get('theme');
+  $tag = $config->get('tag');
   // Add the library and the #markup into page_top
   $page_top['dss_betamessage'] = [
     '#attached' => [
-        'library' => ['dss_betamessage/dss-betamessage']
+        'library' => ['dss_betamessage/dss-betamessage'],
+        'drupalSettings' => array(
+          'dss_betamessage' => array(
+            'theme' => $theme,
+            'tag' => $tag,
+          ),
+        ),
       ],
-    '#markup' => '<p class="betamessage" data-attach-to="' . $attachto . '"><span class="betamessage-text"><span class="betamessage-tag">Beta</span> &nbsp;' . $messagewords . '</span> <span class="betamessage-close"><a href="#" aria-label="Hide this beta message">Hide this</a></span></p>',
+    '#markup' => '<p class="betamessage betamessage-'.$theme.'" data-attach-to="'.$attachto.'">
+      <span class="betamessage-text"><span class="betamessage-tag betamessage-'.$tag.'">'.$tag.'</span> &nbsp;'.$messagewords.'</span>
+      <span class="betamessage-close"><a href="#" aria-label="Hide this message">Hide this</a></span>
+      </p>',
   ];
 }
