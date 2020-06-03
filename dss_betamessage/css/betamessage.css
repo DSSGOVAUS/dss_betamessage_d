@@ -40,6 +40,9 @@ a.betamessage-open:hover,
 a.betamessage-open:focus {
 	text-decoration: underline !important;
 }
+body.is-beta-shown a.betamessage-open {
+	display: none;
+}
 @media screen and (max-width: 980px) {
 	.betamessage-text {
 		display: inline-block;

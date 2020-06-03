@@ -17,8 +17,8 @@ function dss_betamessage_page_top(array &$page_top) {
           ),
         ),
       ],
-    '#markup' => '<p class="betamessage betamessage-'.$theme.'" data-attach-to="'.$attachto.'">
-      <span class="betamessage-text"><span class="betamessage-tag betamessage-'.$tag.'">'.$tag.'</span> &nbsp;'.$messagewords.'</span>
+    '#markup' => '<p id="betamessage" class="betamessage betamessage-'.$theme.'" data-attach-to="'.$attachto.'" aria-label="'.$tag.' site message" role="group">
+      <span class="betamessage-text"><span class="betamessage-tag betamessage-'.$tag.'" aria-hidden="true">'.$tag.'</span> &nbsp;'.$messagewords.'</span>
       <span class="betamessage-close"><a href="#" aria-label="Hide this message">Hide this</a></span>
       </p>',
   ];

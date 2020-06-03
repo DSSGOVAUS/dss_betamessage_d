@@ -4,7 +4,7 @@ jQuery(function($) {
 		var theme = drupalSettings.dss_betamessage.theme;
 		var tag = drupalSettings.dss_betamessage.tag;
 		$(wrapper_element).css('position', 'relative');
-		$(wrapper_element).append('<a href="#" class="betamessage-tag betamessage-open betamessage-'+tag+'" aria-label="Display '+tag+' message">'+tag+'</a>');
+		$(wrapper_element).append('<a href="#betamessage" class="betamessage-tag betamessage-open betamessage-'+tag+'" aria-label="Display '+tag+' message">'+tag+'</a>');
 
 		if((typeof(Storage)!=='undefined') && (localStorage.getItem('betamessage') != 'closed')) {
 			// Show the message
