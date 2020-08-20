@@ -8,14 +8,8 @@ jQuery(function($) {
 
 		if((typeof(Storage)!=='undefined') && (localStorage.getItem('betamessage') != 'closed')) {
 			// Show the message
-			if($('body').hasClass('path-frontpage')) {
-			  $('.betamessage').slideDown(500);
-				$('body').addClass('is-beta-shown');
-			}
-			else {
-				$('.betamessage').css('display','block');
-				$('body').addClass('is-beta-shown');
-			}
+			$('.betamessage').css('display','block');
+			$('body').addClass('is-beta-shown');
 		}
 		// Clicks the Beta link
 		$('.betamessage-open').click(function(){
