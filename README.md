@@ -1,5 +1,4 @@
-# DSS Beta Message (Drupal 8 module)
+# DSS Beta Message (Drupal module)
 
-Display a customisable Beta message on your website.
+Display a customisable message across the top of your website. 
 
-For Aus Government: review the [DTA Guides around the Beta stage](https://guides.service.gov.au/topics/service-design-delivery-process/beta-stage/)

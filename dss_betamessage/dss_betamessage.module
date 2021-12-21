@@ -2,24 +2,42 @@
 function dss_betamessage_page_top(array &$page_top) {
   //Get Config vals
   $config = \Drupal::config('dss_betamessage.credentials');
+  $attachtag = $config->get('attach_tag');
   $attachto = $config->get('attach_to');
   $messagewords = $config->get('messagewords');
   $theme = $config->get('theme');
   $tag = $config->get('tag');
+  $behaviour = $config->get('behaviour');
+  // Set vars
+  $verb = ($behaviour == 'local') ? 'Close' : 'Hide';
+  $aria_label = ($tag == 'none') ? 'Message area' : $tag . ' site message';
+  // Prepare the markup
+  $markup = '<p id="betamessage" class="betamessage betamessage-'.$theme.'" ';
+  if ($attachtag) {
+    $markup .= 'data-attach-to="'.$attachto.'" ';
+  }
+  $markup .= 'aria-label="'.$aria_label.'" role="group"><span class="betamessage-text">';
+  if ($tag != 'none') {
+    $markup .= '<span class="betamessage-tag betamessage-'.$tag.'" aria-hidden="true">'.$tag.'</span> &nbsp;';
+  }
+  $markup .= $messagewords .'</span>';
+  if ($behaviour != 'fixed') {
+    $markup .= '<span class="betamessage-close"><a href="#" aria-label="' . $verb . ' this message">' . $verb . '</a></span>';
+  }
+  $markup .= '</p>';
+
   // Add the library and the #markup into page_top
   $page_top['dss_betamessage'] = [
     '#attached' => [
         'library' => ['dss_betamessage/dss-betamessage'],
         'drupalSettings' => array(
           'dss_betamessage' => array(
-            'theme' => $theme,
             'tag' => $tag,
+            'behaviour' => $behaviour,
           ),
         ),
       ],
-    '#markup' => '<p id="betamessage" class="betamessage betamessage-'.$theme.'" data-attach-to="'.$attachto.'" aria-label="'.$tag.' site message" role="group">
-      <span class="betamessage-text"><span class="betamessage-tag betamessage-'.$tag.'" aria-hidden="true">'.$tag.'</span> &nbsp;'.$messagewords.'</span>
-      <span class="betamessage-close"><a href="#" aria-label="Hide this message">Hide this</a></span>
-      </p>',
+    '#markup' => $markup,
   ];
 }
+ 
