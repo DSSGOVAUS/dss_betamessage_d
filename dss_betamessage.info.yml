@@ -1,6 +1,6 @@
 name: DSS Beta Message
-type: module
 description: "Display a customisable Beta website message on your website."
 package: DSS
-core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
 configure: dss_betamessage.settings
