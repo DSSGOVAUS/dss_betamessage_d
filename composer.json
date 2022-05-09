@@ -1,0 +1,13 @@
+{
+  "name": "dssgovau/dss_betamessage",
+  "description": "Display a customisable Beta website message on your website.",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Chris Lamb"
+    }
+  ],
+  "require": {
+    "drupal/core": "^9"
+  }
+}

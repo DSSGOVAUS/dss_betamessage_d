@@ -1,5 +1,20 @@
-# DSS Beta Message (Drupal 8 module)
-
+# DSS Beta Message (Drupal module)
 Display a customisable Beta message on your website.
 
-For Aus Government: review the [DTA Guides around the Beta stage](https://guides.service.gov.au/topics/service-design-delivery-process/beta-stage/)
+## Install Module to Drupal 8/9 Project
+In your composer file add this to the repositories array:
+
+```
+{
+    "type": "vcs",
+    "url": "git@github.com:DSSGOVAUS/dss_betamessage_d.git"
+}
+```
+
+Then add the package to your composer require object:
+
+```
+"require": { 
+    "dssgovau/dss_betamessage": "^1.0" 
+}
+```
