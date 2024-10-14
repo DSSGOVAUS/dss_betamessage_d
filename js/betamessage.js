@@ -22,6 +22,11 @@ jQuery(function($) {
 			$('.betamessage').slideUp(500);
 			localStorage.setItem('betamessage', 'closed');
 			$('body').addClass('is-beta-hidden');$('body').removeClass('is-beta-shown');
+			// Move focus to the next element with .site-logo class
+        	var nextElement = $(".site-logo").first(); // Selects the first .site-logo element
+          	if (nextElement.length) {
+              nextElement.focus(); // Set focus to the next .site-logo element
+            }
 		});
 	});
 });
